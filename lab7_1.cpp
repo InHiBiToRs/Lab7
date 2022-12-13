@@ -23,19 +23,27 @@ string func2(string x){
 	return y;	
 }
 
-string func3(string x){
-	int i = 0, L = x.size();
-	string y = "";
-	while(i < L){
-		y += tolower(x[i]);
+string Palindrome(string x,string y){
+	int i =0, L = x.size();
+	string z= "";
+	while(i < L ){
+		if(x[i] == y[i]){
+			z = "Yes";
+		}else{
+			z = "No";
+		}
 		i++;
 	}
-	return y;	
+	return z;
 }
 
 int main(){
-    cout >> "Input text: "
-    cout >> "Reversed text: "
-    cout >> "Palindrome: "
+	string x;
+    cout << "Input text: ";
+	cin >> x;
+	string y = func1(x);
+
+    cout << "Reversed text: " << y << endl;
+    cout << "Palindrome: " << Palindrome(func2(x),func2(y));
     return 0;
 }
